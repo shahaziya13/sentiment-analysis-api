@@ -1,42 +1,46 @@
 # Sentiment Analysis API
 
-A REST API built with Python, FastAPI, and Hugging Face Transformers that classifies text as **positive, negative, or neutral** and returns confidence scores for each sentiment class.
+A REST API for classifying text as **positive, negative, or neutral** using a pretrained Hugging Face sentiment analysis model.
+
+Built with **Python, FastAPI, Hugging Face Transformers, and PyTorch**.
 
 ## Features
 
 - Positive, negative, and neutral sentiment classification
-- Confidence score for the predicted sentiment
-- Per-class probability scores
+- Confidence score for each prediction
+- Per-class sentiment scores
 - Single-text sentiment analysis
-- Batch sentiment analysis for up to 10 texts
+- Batch sentiment analysis
+- Batch requests limited to 10 texts
 - Input validation
 - Error handling
-- Automatic API documentation with Swagger UI
-- Automated tests using Pytest
+- Health check endpoint
+- Interactive Swagger API documentation
+- Automated API tests
+- Model evaluation metrics
 
 ## Tech Stack
 
-- Python 3.12
+- Python
 - FastAPI
 - Hugging Face Transformers
 - PyTorch
 - Pydantic
+- Scikit-learn
 - Pytest
 - Uvicorn
 
 ## Model
 
-This project uses the pretrained:
+The API uses the pretrained:
 
 `cardiffnlp/twitter-roberta-base-sentiment-latest`
 
-The model is based on RoBERTa and supports three sentiment classes:
+The model supports three sentiment classes:
 
 - Positive
 - Neutral
 - Negative
-
-No custom model training is required.
 
 ## Project Structure
 
@@ -53,6 +57,8 @@ sentiment-analysis-api/
 ├── tests/
 │   └── test_api.py
 │
+├── evaluate.py
+├── metrics.md
 ├── .gitignore
 ├── pytest.ini
 ├── requirements.txt
